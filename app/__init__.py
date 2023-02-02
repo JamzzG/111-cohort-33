@@ -2,8 +2,7 @@
 # -*- coding ucf8 -*-
 """Sample hellow world Flask app"""
 
-from flask import Flask
-
+from flask import Flask, jsonify
 app = Flask(__name__)
 
 @app.route("/")
@@ -17,3 +16,12 @@ def products():
         "<li>%s</li>" % product for product in product_list
     )
     return "<ul>%s</ul>" % bullet_list
+
+@app.route("/aboutme", methods=["GET"])
+def about_me():
+    about= {
+        "first_name": "James",
+        "last_name": "Grantham",
+        "hobby": "Skateboarding"
+    }
+    return jsonify(about)
