@@ -1,2 +1,2 @@
-venv/*    Ignores virtual evironment.  * means everything from Regular Expressions
-*__pycache__*   Any pycache folders and files in any subdirectories.
+venv*
+__pycache__*
